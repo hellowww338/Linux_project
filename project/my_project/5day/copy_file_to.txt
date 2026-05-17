@@ -1,0 +1,62 @@
+
+#include "stdio.h"
+#include "stdlib.h"
+
+
+int main(int argc, char *argv[])
+{
+	char temp[50];
+	if(argc != 3)
+	{
+		printf("Usage: %s source_file destination_file\n", argv[0]);
+		exit(1);
+	}
+	FILE *fp_r = fopen(argv[1], "r");
+	FILE *fp_w = fopen(argv[2], "w");
+	if(fp_r == NULL || fp_w == NULL)
+	{
+		perror("fopen");
+		exit(1);
+	}
+
+	while(fread(&temp, 20, 1, fp_r) == 1)
+	{
+		if(fwrite(&temp, 20, 1, fp_w) != 1)
+		{
+			perror("fwrite");
+			exit(1);
+		}
+	}
+
+	printf("Copy file from %s to %s successfully.\n", argv[1], argv[2]);
+
+	fclose(fp_r);
+	fclose(fp_w);
+	return 0;
+}
+aaaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbbbbb
+ccccccccccccccccccccccccccc
+dddddddddddddddddddddddd
+eeeeeeeeeeeeeeeeeeeeeeeee
+ffffffffffffffffffffffffffffffff
+ggggggggggggggggggggggggggggggg
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+llllllllllllllllllllllllllllllllllllll
+mmmmmmmmmmmmmmmmmmmmm
+nnnnnnnnnnnnnnnnnnnnnnnn
+ooooooooooooo
+pppppppppppppppppppppp
+qqqqqqqqqqqqqqqqqqqqqqq
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+ssssssssssssssssssssssssssssssssss
+ttttttttttttttttttttttttttttttttttttttttttt
+uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+zzzz

@@ -1,8 +1,8 @@
 
 上传git data:
 参考https://cloud.tencent.com/developer/article/2398974
-git branch -m master main更改分支名字
-git remote add origin https://github.com/hellowww338/Linux_project  链接远程仓库
+
+
 git pull origin main （--allow-unrelated-histories）  获取最新更改
 git add .		添加暂存区
 git commit -m "Your commit message"			提交信息
@@ -15,3 +15,12 @@ git pull origin main		//合并更新
 
 git remote -v       # 查看远程仓库配置
 git remote remove origin删除
+
+
+第一次：
+cd 目录  
+git init
+git clone  https://github.com/hellowww338/Linux_project  克隆
+git config --global user.name "Your Name"				设置本地仓库用户名
+git config --global user.email "your.email@example.com" 设置本地仓库邮箱
+git remote add origin https://github.com/hellowww338/Linux_project  链接远程仓库
